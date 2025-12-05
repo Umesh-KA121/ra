@@ -1,30 +1,30 @@
 import Header from "../components/header";
 import ButtonBar from "../components/ButtonBar";
-import Graph from "../components/Graph";
-import Controls from "../components/Controls";
+import Graph from "../components/GraphPanel";
+import Controls from "../components/ControlPanel";
 import AllocationMatrix from "../components/AllocationMatrix";
 import RequestMatrix from "../components/RequestMatrix";
 
 const Home = () => {
   return (
-    <div className="w-full h-full p-6 flex flex-col gap-4">
+    <div className="w-full min-h-screen p-6 flex flex-col gap-4 bg-gray-100">
 
-      {/* TOP HEADER */}
+      {/* HEADER */}
       <Header />
 
-      {/* BUTTON BAR BELOW HEADER */}
+      {/* BUTTON BAR */}
       <ButtonBar />
 
-      {/* MAIN AREA: LEFT GRAPH + RIGHT PANEL */}
+      {/* MAIN LAYOUT */}
       <div className="flex w-full gap-4 mt-2">
 
-        {/* LEFT SIDE → GRAPH */}
-        <div className="flex flex-col flex-[3] bg-white rounded-xl shadow p-4">
+        {/* LEFT GRAPH AREA (flex-grow) */}
+        <div className="flex flex-col flex-grow bg-white rounded-xl shadow p-4 min-h-[500px]">
           <Graph />
         </div>
 
-        {/* RIGHT SIDE → CONTROLS + MATRICES */}
-        <div className="flex flex-col flex-[1] gap-4">
+        {/* FIXED RIGHT PANEL */}
+        <div className="flex flex-col gap-4 w-[320px]">
 
           <Controls />
 
